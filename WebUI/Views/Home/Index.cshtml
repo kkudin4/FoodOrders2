@@ -1,0 +1,39 @@
+﻿@model WebUI.Models.Order
+
+@{
+    ViewData["Title"] = "Заказ еды";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Закажи еду у нас!!!</h1>
+</div>
+
+    <div class="d-flex justify-content-center">
+             <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Posted" />
+
+            <div class="form-group">
+                <label asp-for="FoodName" class="control-label"></label>
+                <select class="form-control" name="FoodName" id="FoodName">
+                    <option value="Цыпленок барбекю">Цыпленок барбекю</option>
+                    <option value="Веган пир">Веган пир</option>
+                    <option value="Детский обед">Детский обед</option>
+                </select>
+                <span asp-validation-for="FoodName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Заказать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>

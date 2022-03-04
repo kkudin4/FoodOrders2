@@ -1,0 +1,7 @@
+﻿@model WebUI.Models.Order
+@{
+    ViewData["Title"] = "Поздравляем с успешным заказом!!!";
+}
+<h1>Поздравляем с успешным заказом!!!</h1>
+<h1>Номер заказа – @Model.OrderId</h1>
+<p>  <a asp-action="Index" asp-controller="Home">Заказать еще</a></p>
